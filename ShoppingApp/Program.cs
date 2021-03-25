@@ -23,14 +23,17 @@ namespace ShoppingApp
                 int hasToPayI = Convert.ToInt32(hasToPay);
                 int paidI = Convert.ToInt32(paid);
                 int i = 0;
-                if (hasToPayI > paidI) { Console.WriteLine($"Nezaplatil jsi dostatek peněz. Musíš zaplatit ještě {hasToPayI - paidI}Kč"); break; }
-                else if (hasToPayI == paidI) { Console.WriteLine("Zaplaceno!"); break; }
-                else if (hasToPayI < paidI) { i =  ReturningMoney(paidI - hasToPayI);  }
+                if (hasToPayI > paidI) { Console.WriteLine($"Nezaplatil jsi dostatek peněz. Musíš zaplatit ještě {hasToPayI - paidI}Kč"); }
+                else if (hasToPayI == paidI) { Console.WriteLine("Zaplaceno!"); }
+                else if (hasToPayI < paidI)
+                {
+                    i = ReturningMoney(paidI - hasToPayI);
 
-                Console.WriteLine($"Vráceno {paidI - hasToPayI} ve formě {amountFifty}x 50 Kč, {amountTwenty}x 20 Kč, {amountTen}x 10 Kč, {amountFive}x 5 Kč, {amountTwo}x 2 Kč, {amountOne}x 1 Kč!");
+                    Console.WriteLine($"Vráceno {paidI - hasToPayI} ve formě {amountFifty}x 50 Kč, {amountTwenty}x 20 Kč, {amountTen}x 10 Kč, {amountFive}x 5 Kč, {amountTwo}x 2 Kč, {amountOne}x 1 Kč!");
+                    
+                }
                 Console.ReadLine();
             }
-            Console.ReadLine();
         }
 
         static int amountFifty = 0, amountTwenty = 0, amountTen = 0, amountFive = 0, amountTwo = 0, amountOne = 0;
